@@ -9,5 +9,5 @@ Requisitos
     inserir_credito(check), 
     funcao_resultado(gera numeros aleatorios)
     descontar_valor, 
-    checkwin
+    checkwin (check)
 >variavel do valor apostado

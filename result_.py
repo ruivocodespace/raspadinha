@@ -5,7 +5,7 @@ def numbers():
     contador = 0
 
     while jogar:
-        # sortear números
+        #sortear números
         valores = [random.randint(1, 3) for _ in range(3)]
         contador += 1
 

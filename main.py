@@ -1,1 +1,3 @@
 import inserir_credito
+import descontar_valor
+import print_saldo

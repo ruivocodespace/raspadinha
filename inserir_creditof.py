@@ -10,5 +10,3 @@ saldo = 0
 saldo = insert_coin(saldo)
 print(saldo)
 saldo = insert_coin(saldo)
-
-    

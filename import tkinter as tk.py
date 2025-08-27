@@ -1,7 +1,7 @@
 import random
 
 def gerar_raspadinha():
-    premios = ["R$10", "R$20", "R$50", "R$100", "Nada", "R$5", "R$200"]
+    premios = ["Nada :(", "Nada :(", "R$25", "Nada :(", "Nada :(", "R$5", "R$200"]
     numero = random.randint(1, 100)
     premios_raspadinha = random.sample(premios, 3)
     premio_revelado = random.choice(premios_raspadinha)

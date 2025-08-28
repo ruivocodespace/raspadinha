@@ -2,6 +2,7 @@
 import random
 saldo = 0.0
 derrotas_consecutivas = 0
+simbolos = ["🍒", "🍋", "⭐", "🍀", "💎"]
 
 def insert_coin(saldo):
     while True:
@@ -31,11 +32,11 @@ def gerar_raspadinha():
 
     # Se perdeu 4 vezes seguidas, a próxima é vitória garantida
     if derrotas_consecutivas >= 4:
-        n = random.choice([1, 2, 3])   # escolhe qual símbolo vai dar vitória
-        numeros = [n, n, n]
+        n = random.choice(["🍒", "🍋", "⭐", "🍀", "💎"])   # escolhe qual símbolo vai dar vitória
+        numeros = [n, n, n, n, n]
         derrotas_consecutivas = 0
     else:
-        numeros = [random.randint(1, 3) for _ in range(3)]
+        numeros = [random.choice(simbolos) for _ in range(3)]
 
     numero = random.randint(1, 9999)
 
@@ -64,7 +65,8 @@ def descontar_valor(valor_aposta):
 
 def calcular_premio(resultados):
     global derrotas_consecutivas
-    premios = {1: 5, 2: 20, 3: 100}
+    premios = {"🍒": 5, "🍋": 10, "⭐": 50, "💎": 100}
+
 
     if resultados[0] == resultados[1] == resultados[2]:
         derrotas_consecutivas = 0  # ganhou → reseta

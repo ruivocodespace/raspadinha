@@ -38,7 +38,8 @@ def gerar_raspadinha():
     else:
         numeros = [random.choice(simbolos) for _ in range(3)]
 
-    numero = random.randint(1, 9999)
+    numero = random.randint(1, 9999) 
+    
 
     print()
     print(" Raspadinha ".center(40, "-"))

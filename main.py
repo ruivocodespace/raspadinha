@@ -77,4 +77,4 @@ def main():
             print(f"\nObrigado por jogar! Seu saldo final: R$ {saldo:.2f}")
             break
 if __name__ == "__main__":
-    main()
+    main() 

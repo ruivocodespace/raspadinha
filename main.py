@@ -5,7 +5,7 @@ def insert_coin(saldo):
     while True:
         try:
             print("Escolha uma opção de crédito:")
-            print("1- 2,00", "2- 5,00", "3- 10,00", "4- 15,00", "5- 20,00", sep="\n")
+            print("1- 2,00", "2- 5,00", "3- 10,00", "4- 15,00", "5- 50,00", sep="\n")
             opcao = int(input("Digite o número da opção desejada: "))
 
             valores = {1: 2, 2: 5, 3: 10, 4: 15, 5: 50}
@@ -29,6 +29,7 @@ def gerar_raspadinha():
     numeros = [random.randint(1,3) for _ in range(3)]
     numero = random.randint(1, 9999)  # número identificador da raspadinha
 
+    print()   
     print(" Raspadinha ".center(40, "-"))
     print(f"Número da Raspadinha: {numero}")
     print("[ ? ] [ ? ] [ ? ]")  # oculto até raspar

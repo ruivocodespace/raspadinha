@@ -4,7 +4,7 @@ saldo = 0.0
 derrotas_consecutivas = 0
 simbolos = ["🍒", "🍋", "⭐", "🍀", "💎"]
 
-def insert_coin(saldo): 
+def insert_coin(saldo):
     while True:
         try:
             print("Escolha uma opção de crédito:")

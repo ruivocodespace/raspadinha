@@ -77,7 +77,14 @@ def main():
             break  # sai se não tiver saldo suficiente
 
         resultados = gerar_raspadinha()
-        resposta = input("Quer raspar esta raspadinha? (s/n) ").strip().lower()
+        
+        #loop para garantir resposta válida
+        while True:
+            resposta = input("Quer raspar esta raspadinha? (s/n) ").strip().lower()
+            if resposta in ('s', 'n'):
+                break
+            print("⚠ Digite uma resposta válida (s/n).")
+
         if resposta == 's':
             print("🎉 Resultado da raspadinha:")
             print(f"[ {resultados[0]} ] [ {resultados[1]} ] [ {resultados[2]} ]")
@@ -90,11 +97,8 @@ def main():
                 print("➡ Nada :(")
         else:
             print("Raspadinha não raspada.")
-
-        resposta = input("Quer jogar outra raspadinha? (s/n) ").strip().lower()
-        if resposta != 's':
-            print("Obrigado por jogar! Até a próxima.")
-            break
+                
+            
 
 if __name__ == "__main__":
 

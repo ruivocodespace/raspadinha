@@ -40,7 +40,6 @@ def gerar_raspadinha():
 
     numero = random.randint(1, 9999) 
     
-
     print()
     print(" Raspadinha ".center(40, "-"))
     print(f"Número da Raspadinha: {numero}")

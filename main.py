@@ -2,7 +2,7 @@
 import random
 saldo = 0.0
 derrotas_consecutivas = 0
-simbolos = ["🍒", "🍋", "⭐", "🍀", "💎"]
+simbolos = ["⭐", "🍀", "💎"]
 
 def insert_coin(saldo): 
     while True:
@@ -32,13 +32,13 @@ def gerar_raspadinha():
 
     # Se perdeu 4 vezes seguidas, a próxima é vitória garantida
     if derrotas_consecutivas >= 4:
-        n = random.choice(["🍒", "🍋", "⭐", "🍀", "💎"])   # escolhe qual símbolo vai dar vitória
-        numeros = [n, n, n, n, n]
+        n = random.choice(["⭐", "🍀", "💎"])   # escolhe qual símbolo vai dar vitória
+        numeros = [n, n, n]
         derrotas_consecutivas = 0
     else:
         numeros = [random.choice(simbolos) for _ in range(3)]
 
-    numero = random.randint(1, 9999) 
+    numero = random.randint(1, 100) 
     
     print()
     print(" Raspadinha ".center(40, "-"))
@@ -65,7 +65,7 @@ def descontar_valor(valor_aposta):
 
 def calcular_premio(resultados):
     global derrotas_consecutivas
-    premios = {"🍒": 5, "🍋": 10, "⭐": 50, "💎": 100}
+    premios = {"🍀": 10, "⭐": 50, "💎": 80}
 
 
     if resultados[0] == resultados[1] == resultados[2]:
@@ -85,9 +85,6 @@ def main():
 
     while True:
         print(f"\nSaldo atual: R$ {saldo:.2f}")
-        if not descontar_valor(valor_aposta):
-            break  # sai se não tiver saldo suficiente
-
         resultados = gerar_raspadinha()
         
         #loop para garantir resposta válida
@@ -98,6 +95,9 @@ def main():
             print("⚠ Digite uma resposta válida (s/n).")
 
         if resposta == 's':
+            if not descontar_valor(valor_aposta):
+                break
+
             print("🎉 Resultado da raspadinha:")
             print(f"[ {resultados[0]} ] [ {resultados[1]} ] [ {resultados[2]} ]")
             ganho = calcular_premio(resultados)

@@ -20,3 +20,4 @@ def insert_coin(saldo):
 
         except ValueError:
             print("⚠️ Entrada inválida. Digite apenas números, de 1 a 5.")
+            

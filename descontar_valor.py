@@ -6,4 +6,4 @@ def descontar_valor(valor_aposta):
         return True
     else:
         print("Saldo insuficiente para apostar R$ {:.2f}!".format(valor_aposta))
-        return False
+        return False 

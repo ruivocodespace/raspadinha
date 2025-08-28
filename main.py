@@ -2,7 +2,7 @@ import inserir_credito
 import print_saldo
 import result_
 import checkwin
-import descontar_valor
+import descontar_valor  
 
 #Insert coins
 

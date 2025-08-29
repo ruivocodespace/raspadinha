@@ -17,4 +17,4 @@
 
 ## Abaixo está o fluxograma que descreve o funcionamento geral do sistema:
 
-![Fluxograma]()
+![Fluxograma](img/raspadinha.png)

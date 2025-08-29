@@ -1,14 +1,21 @@
 def gerar_raspadinha():
-    premios = ["R$300", "R$25", "R$5", "R$200"]
-    numero = random.randint(1, 100)
-    premios_raspadinha = random.choices(premios, k=3)  # permite repetição
+    global derrotas_consecutivas
+
+    #Se perdeu 4 vezes seguidas, a próxima é vitória garantida
+    if derrotas_consecutivas >= 4:
+        n = random.choice(["⭐", "🍀", "💎"])   #escolhe qual símbolo vai dar vitória
+        numeros = [n, n, n]
+        derrotas_consecutivas = 0
+    else:
+        numeros = [random.choice(simbolos) for _ in range(3)]
+
+    numero = random.randint(1, 100) 
+    
+    print()
     print(" Raspadinha ".center(40, "-"))
     print(f"Número da Raspadinha: {numero}")
-    print("Prêmios:")
-    for premio in premios_raspadinha:
-        print(f"- {premio}")
-    print("[ ? ] [ ? ] [ ? ]")  #representando os 3 espaços da raspadinha
+    print("[ ? ] [ ? ] [ ? ]")
     print(f"Créditos atuais: R$ {saldo:.2f}")
     print("========================\n")
 
-    return premios_raspadinha
+    return numeros

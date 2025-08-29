@@ -29,9 +29,9 @@ def insert_coin(saldo):
 def gerar_raspadinha():
     global derrotas_consecutivas
 
-    # Se perdeu 4 vezes seguidas, a próxima é vitória garantida
+    #Se perdeu 4 vezes seguidas, a próxima é vitória garantida
     if derrotas_consecutivas >= 4:
-        n = random.choice(["⭐", "🍀", "💎"])   # escolhe qual símbolo vai dar vitória
+        n = random.choice(["⭐", "🍀", "💎"])   #escolhe qual símbolo vai dar vitória
         numeros = [n, n, n]
         derrotas_consecutivas = 0
     else:
@@ -57,9 +57,9 @@ def descontar_valor(valor_aposta):
     else:
         print(f"Saldo insuficiente para apostar. Valor da aposta R$ {valor_aposta:.2f}!")
         saldo_novo = insert_coin(saldo)
-        if saldo_novo > saldo:  # só atualiza se realmente entrou crédito
+        if saldo_novo > saldo:  #só atualiza se realmente entrou crédito
             saldo = saldo_novo
-            return descontar_valor(valor_aposta)  # tenta novamente após inserir
+            return descontar_valor(valor_aposta)  #tenta novamente após inserir
         return False
 
 def calcular_premio(resultados):
@@ -67,22 +67,22 @@ def calcular_premio(resultados):
     premios = {"🍀": 10, "⭐": 50, "💎": 80}
 
     if resultados[0] == resultados[1] == resultados[2]:
-        derrotas_consecutivas = 0  # ganhou → reseta
+        derrotas_consecutivas = 0  #ganhou → reseta
         return premios[resultados[0]]
 
-    # perdeu → incrementa
+    #perdeu → incrementa
     derrotas_consecutivas += 1
     return 0
 
 def main():
     global saldo
-    saldo = 0.0  # saldo inicial do jogador
-    valor_aposta = 10.0  # custo fixo da raspadinha
+    saldo = 0.0  #saldo inicial do jogador
+    valor_aposta = 10.0  #custo fixo da raspadinha
 
     while True:
         print(f"\nSaldo atual: R$ {saldo:.2f}")
         
-        # opção de saída antes de gerar
+        #opção de saída antes de gerar
         escolha = input("Pressione ENTER para continuar ou digite 'q' para sair: ").strip().lower()
         if escolha == "q":
             print("👋 Obrigado por jogar! Até a próxima.")
@@ -90,14 +90,14 @@ def main():
 
         resultados = gerar_raspadinha()
         
-        # loop para garantir resposta válida (s, n ou q)
+        #loop para garantir resposta válida (s, n ou q)
         while True:
             resposta = input("Quer raspar esta raspadinha? (s/n ou q para sair): ").strip().lower()
             if resposta in ('s', 'n', 'q'):
                 break
             print("⚠ Digite uma resposta válida (s/n/q).")
 
-        # se o jogador quiser sair no meio da rodada
+        #se o jogador quiser sair no meio da rodada
         if resposta == 'q':
             print("👋 Jogo encerrado pelo jogador.")
             break
